@@ -49,8 +49,8 @@ strat.check = function(candle) {
   
   var atrResult = this.talibIndicators.myAtr.result.outReal;  
 
-  this.supertrend.upperBandBasic = ((candle.high + candle.low) / (2).toFixed(2)) + (settings.bandFactor * atrResult);
-  this.supertrend.lowerBandBasic = ((candle.high + candle.low) / (2).toFixed(2)) - (settings.bandFactor * atrResult);
+  this.supertrend.upperBandBasic = ((candle.high + candle.low) / 2) + (settings.bandFactor * atrResult);
+  this.supertrend.lowerBandBasic = ((candle.high + candle.low) / 2) - (settings.bandFactor * atrResult);
 
   if(this.supertrend.upperBandBasic < this.lastSupertrend.upperBand || this.lastCandleClose > this.lastSupertrend.upperBand)
     this.supertrend.upperBand = this.supertrend.upperBandBasic; 
